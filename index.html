@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP/Binary Conversion Quiz</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Main Menu Section -->
+        <section id="main-menu">
+            <div class="header">
+                <h1><i class="fas fa-network-wired"></i> IP & Binary Conversion Quiz</h1>
+                <p>Test your IPv4/binary conversion skills with this interactive quiz. Practice converting between IP addresses and their binary representations.</p>
+            </div>
+            <div class="button-container">
+                <button id="ip-to-bin-btn" class="btn primary-btn"><i class="fas fa-arrow-right-arrow-left"></i> IP to Binary Quiz</button>
+                <button id="bin-to-ip-btn" class="btn primary-btn"><i class="fas fa-exchange-alt"></i> Binary to IP Quiz</button>
+            </div>
+            
+            <!-- Example Conversion Table -->
+            <div class="example-table-container">
+                <h3><i class="fas fa-calculator"></i> Binary Place Values</h3>
+                <div class="example-table-wrapper">
+                    <table class="example-table binary-values-table">
+                        <thead>
+                            <tr>
+                                <th>128</th>
+                                <th>64</th>
+                                <th>32</th>
+                                <th>16</th>
+                                <th>8</th>
+                                <th>4</th>
+                                <th>2</th>
+                                <th>1</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1/0</td>
+                                <td>1/0</td>
+                                <td>1/0</td>
+                                <td>1/0</td>
+                                <td>1/0</td>
+                                <td>1/0</td>
+                                <td>1/0</td>
+                                <td>1/0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="binary-explanation">
+                    <p class="example-note"><i class="fas fa-info-circle"></i> <strong>How Binary Works:</strong> Each position represents a power of 2 (from right to left: 2⁰=1, 2¹=2, 2²=4, etc).</p>
+                    
+                    <div class="binary-examples">
+                        <div class="example">
+                            <h4>Binary to Decimal:</h4>
+                            <p>For binary <strong>10101010</strong>:</p>
+                            <p>1×128 + 0×64 + 1×32 + 0×16 + 1×8 + 0×4 + 1×2 + 0×1 = <strong>170</strong></p>
+                        </div>
+                        <div class="example">
+                            <h4>Decimal to Binary:</h4>
+                            <p>For decimal <strong>192</strong>:</p>
+                            <p>128+64+0+0+0+0+0+0 = <strong>11000000</strong></p>
+                        </div>
+                    </div>
+                    
+                    <p class="example-tip"><i class="fas fa-lightbulb"></i> In IPv4, each octet is an 8-bit binary number between 0-255.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz-section" class="hidden-section">
+            <div class="header">
+                <h2 id="quiz-type-header">IPv4 to Binary Conversion Quiz</h2>
+            </div>
+            <div class="question-container">
+                <p id="question-text">Convert this IP address to binary:</p>
+            </div>
+            <div class="answer-container">
+                <div class="input-fields">
+                    <input type="text" id="input-1" class="answer-input" maxlength="8">
+                    <span class="separator">.</span>
+                    <input type="text" id="input-2" class="answer-input" maxlength="8">
+                    <span class="separator">.</span>
+                    <input type="text" id="input-3" class="answer-input" maxlength="8">
+                    <span class="separator">.</span>
+                    <input type="text" id="input-4" class="answer-input" maxlength="8">
+                </div>
+                <p id="feedback-text" class="feedback-text"></p>
+                <p id="score-display" class="score-text">Score: 0/0</p>
+            </div>
+            <div class="button-container">
+                <button id="submit-btn" class="btn primary-btn"><i class="fas fa-check-circle"></i> Submit Answer</button>
+                <button id="new-question-btn" class="btn primary-btn"><i class="fas fa-sync-alt"></i> New Question</button>
+                <button id="quiz-menu-btn" class="btn secondary-btn"><i class="fas fa-home"></i> Back to Menu</button>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section id="history-section" class="hidden-section">
+            <div class="header">
+                <h2><i class="fas fa-chart-line"></i> Score History</h2>
+            </div>
+            <div class="history-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th><i class="far fa-clock"></i> Date & Time</th>
+                            <th><i class="fas fa-tag"></i> Quiz Type</th>
+                            <th><i class="fas fa-check"></i> Score</th>
+                            <th><i class="fas fa-percent"></i> Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-tbody">
+                        <!-- History entries will be added here by JavaScript -->
+                    </tbody>
+                </table>
+                <p id="no-history" class="hidden-element"><i class="fas fa-info-circle"></i> No quiz history available.</p>
+            </div>
+            <div class="button-container">
+                <button id="history-back-btn" class="btn secondary-btn"><i class="fas fa-arrow-left"></i> Back to Menu</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
