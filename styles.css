@@ -592,15 +592,7 @@ td {
     }
 }
 
-/* Responsive adjustments */
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1000px;
-        min-height: 600px;
-        height: auto;
-    }
-}
-
+/* Mobile-specific enhancements */
 @media (max-width: 768px) {
     .container {
         max-width: 100%;
@@ -609,7 +601,7 @@ td {
     }
     
     h1 {
-        font-size: 26px;
+        font-size: 24px;
     }
     
     h2 {
@@ -619,81 +611,184 @@ td {
     .answer-input {
         width: 70px;
     }
+    
+    .binary-values-table th {
+        font-size: 16px;
+        padding: 8px 3px;
+    }
+    
+    .binary-values-table td {
+        font-size: 14px;
+        padding: 8px 3px;
+    }
+    
+    .example-table-container {
+        margin-top: 30px;
+        padding: 15px;
+    }
+    
+    .binary-explanation {
+        padding: 10px;
+    }
+    
+    .example h4 {
+        font-size: 15px;
+    }
+    
+    .example p {
+        font-size: 13px;
+    }
 }
 
-@media (max-width: 650px) {
-    section {
-        padding: 20px 15px;
+/* Small mobile devices */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
     }
     
-    .input-fields {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-    
-    .separator {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        margin: 8px 0;
-        font-size: 18px;
-    }
-    
-    .answer-input {
-        flex: 1;
-        min-width: 70px;
-    }
-    
-    #quiz-section .button-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    #quiz-section .button-container .btn {
+    .container {
+        min-height: 98vh;
         max-width: 100%;
-        width: 100%;
-        margin: 0;
+        border-radius: 8px;
     }
     
-    table {
-        font-size: 14px;
-    }
-    
-    th, td {
-        padding: 10px 6px;
+    section {
+        padding: 15px 10px;
     }
     
     h1 {
-        font-size: 28px;
+        font-size: 20px;
     }
     
-    h2 {
-        font-size: 22px;
-    }
-}
-
-@media (max-height: 700px) {
-    .container {
-        min-height: 98vh;
+    .header p {
+        font-size: 14px;
     }
     
-    section {
-        padding-top: 15px;
-        padding-bottom: 15px;
+    .btn {
+        padding: 12px;
+        height: 50px;
+        font-size: 15px;
     }
     
-    .header {
-        margin-bottom: 20px;
-        padding-bottom: 15px;
+    .binary-values-table {
+        border-width: 1px;
     }
     
-    .question-container {
-        padding: 15px;
-        margin-bottom: 15px;
+    .binary-values-table th {
+        font-size: 13px;
+        padding: 5px 2px;
+    }
+    
+    .binary-values-table td {
+        font-size: 12px;
+        padding: 5px 2px;
+    }
+    
+    .example {
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .example-note, .example-tip {
+        font-size: 12px;
+        padding: 6px 8px;
     }
     
     .answer-container {
-        margin-bottom: 20px;
-        padding: 15px;
+        padding: 15px 10px;
+    }
+    
+    .input-fields {
+        padding: 10px;
+        flex-direction: column;
+    }
+    
+    .answer-input {
+        width: 100%;
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+    
+    .separator {
+        margin: 5px 0;
+        font-size: 16px;
+    }
+    
+    #quiz-section .button-container .btn {
+        margin-bottom: 8px;
+        width: 100%;
+    }
+    
+    .question-container {
+        padding: 15px 10px;
+        font-size: 16px;
+    }
+}
+
+/* Landscape orientation for mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        min-height: auto;
+    }
+    
+    section {
+        padding: 10px;
+    }
+    
+    .header {
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+    
+    .header p {
+        display: none;
+    }
+    
+    .example-table-container {
+        margin-top: 20px;
+    }
+    
+    .button-container {
+        gap: 10px;
+    }
+    
+    .btn {
+        height: 45px;
+        padding: 8px;
+    }
+    
+    .binary-examples {
+        flex-direction: row;
+        gap: 10px;
+    }
+    
+    .example {
+        min-width: 0;
+    }
+}
+
+/* Fix for very small screens */
+@media (max-width: 320px) {
+    h1 {
+        font-size: 18px;
+    }
+    
+    .binary-values-table th,
+    .binary-values-table td {
+        padding: 4px 1px;
+        font-size: 11px;
+    }
+    
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+    
+    .answer-input {
+        padding: 10px;
+    }
+    
+    .example p {
+        font-size: 11px;
     }
 }
